@@ -1,4 +1,49 @@
 # Ruby on Rails Tutorial sample application
+
+This is the sample application for the
+[*Ruby on Rails Tutorial:
+Learn Web Development with Rails*](https://www.railstutorial.org/)
+by [Michael Hartl](https://www.michaelhartl.com/).
+
+## License
+
+All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+is available jointly under the MIT License and the Beerware License. See
+[LICENSE.md](LICENSE.md) for details.
+
+## Getting started
+
+To get started with the app, clone the repo and then install the needed gems:
+
+```
+$ gem install bundler -v 2.3.14
+$ bundle _2.3.14_ config set --local without 'production'
+$ bundle _2.3.14_ install
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+For more information, see the
+[*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book).
+
+Chapter 3 notes
+
 This is chaptewr 3 in the Ruby on Rails Tutorial
 It we are builing a stitic page
 we run rails new sample app --skip bundle
@@ -129,45 +174,18 @@ root "static_pages#home"
 we use a hash mark rather thatn just a slash. \
 this creates a root_url helper
 
+Chapter 4 notes
 
-This is the sample application for the
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](https://www.railstutorial.org/)
-by [Michael Hartl](https://www.michaelhartl.com/).
+custion helpers. we use embedded ruby to make abase title in case one is not provided in the view page. helpers are function for use in the view page.
 
-## License
+the title says About | Ruby on Rails Tutorial Sampole App
+if the About is not provided it says
+| Ruby on Rails Sample App
+to make a base tile which elimintes the vertical bar at eh begining we make a 
+helper function full title that returns that title without the bar is no page title is provided.
 
-All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
-is available jointly under the MIT License and the Beerware License. See
-[LICENSE.md](LICENSE.md) for details.
-
-## Getting started
-
-To get started with the app, clone the repo and then install the needed gems:
-
-```
-$ gem install bundler -v 2.3.14
-$ bundle _2.3.14_ config set --local without 'production'
-$ bundle _2.3.14_ install
-```
-
-Next, migrate the database:
-
-```
-$ rails db:migrate
-```
-
-Finally, run the test suite to verify that everything is working correctly:
-
-```
-$ rails test
-```
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-```
-$ rails server
-```
-
-For more information, see the
-[*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book).
+string interpolation #{}
+ printing
+  puts
+  print is like puts but without a newline
+  
