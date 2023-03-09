@@ -188,4 +188,38 @@ string interpolation #{}
  printing
   puts
   print is like puts but without a newline
+
+  chapter 5
+  5.2 sass and asset pipeline
+  asset piepline refers to management of static assets of css and images. there are asset directories, manifest files and prepocessor engines.
+  the asset directories are in app, lib or vendor directories. which depends if the css or images are scopes to the project, to the dev team of if they come from a third party. each asset directoru has csss and images subdirectories. so this is where we place css files, or in this case custom.scss in app/assets/stylesheets
+  manifest files combine css files for production. it's in the app/assets/stylesheets/application.css file, but we dont have to change the defaults.
+  the preprocessor engine works with the manifest file to process the css for production to mak eit more efficient for the browser to load.
+
+  scss is like css, but with added features like nesting a variable declarations
+
+  with nesting, for example you have a class with an atribute, then the class combinend with a tag, you can nest the second insode the first.
+  if you want to :hover you have to nest it with the ampersand  &:hover
+  varibles are declared
+  $variable-name: attribute;
+  for example
+  $light-gray: #777;
+Bootstrap uses Less not Sass,but it's alsom the same, you cahnge teh @ sign for a dollar sign. you can look at the bootstrap page of less variables
+
+5.3 layout links
+we for rails we want to use named routes
+
+<%= link_to "About", about_path %>
+
+"About" is the word that is linked, and about_path is the named route.
   
+here assert_template compares with the result opf get root path
+then assert select looks for the tag with a=href and the question mark is replaced 
+  with the string value refered by the named route.
+so first we we think of the path we want to test
+the root path, we look at the page that is should be, 
+using assert template. this wil compare get root path with 
+app/views/static_pages/home.html.erb
+which is found with just static_pages/home
+but the links we will check with assert_select 
+are actually in the header and footer
