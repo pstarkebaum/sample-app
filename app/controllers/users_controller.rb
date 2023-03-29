@@ -10,9 +10,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # Not the fianl implementation!
+    @user = User.new(user_params) 
     if @user.save
-    # if false
+      reset_session
+      log_in @user      # Log in user after signup
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
@@ -22,7 +23,9 @@ class UsersController < ApplicationController
 
   private
         def user_params
-          params.require(:user).permit(:name, :email,
-          :password, :password_confirmation)
+          params.require(:user).permit(:name, 
+                                       :email,
+                                       :password, 
+                                       :password_confirmation)
         end
 end
